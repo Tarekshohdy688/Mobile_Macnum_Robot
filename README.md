@@ -126,18 +126,28 @@ To install the Mecanum Mobile Robot package, follow these steps:
 
 1) ROS1-2 Bridge:
 -cancel the default sourcing from bashrc
+
 -sudo apt-get install ros-foxy-ros1*
+
 -source /opt/ros/noetic/setup.bash 
+
 -source /opt/ros/foxy/local_setup.bash 
+
 -source /home/tarekshohdy/catkin_workspace/devel/setup.bash   --> change my name to yours
+
 -source /home/tarekshohdy/colcon_ws/install/local_setup.bash  --> change my name to yours
+
 -export ROS_MASTER_URI=http://tarekshohdy-IdeaPad-Gaming-3-15ACH6:11311/  --> change my name to yours
+
 -ros2 run ros1_bridge dynamic_bridge
+
 Then try with:
+
 -testing code ros1: rosrun rospy_tutorials listener
+
 -testing code ros2: ros2 run demo_nodes_cpp talker
 
-2) SSH into Pi:
+3) SSH into Pi:
 -Username: *****
 -Password: *****
 -Connect both laptop and pi on the same network
@@ -203,9 +213,9 @@ angular:
 - rosrun rosserial_python serial_node.py /dev/ttyACM0 57600
 
 5) Arduino Code cpp:
-<img src="Images/Arduino_Code_1.jpeg" alt="Arduino_Code_1 X4" width="500" align="center" caption="Arduino_Code_1"/>
-<img src="Images/Arduino_Code_2.jpeg" alt="Arduino_Code_2 X4" width="500" align="center" caption="Arduino_Code_2"/>
-<img src="Images/Arduino_Code_3.jpeg" alt="Arduino_Code_3 X4" width="500" align="center" caption="Arduino_Code_3"/>
+<img src="Images/Arduino_Code_1.jpeg" alt="Arduino_Code_1 X4" width="600" align="center" caption="Arduino_Code_1"/>
+<img src="Images/Arduino_Code_2.jpeg" alt="Arduino_Code_2 X4" width="600" align="center" caption="Arduino_Code_2"/>
+<img src="Images/Arduino_Code_3.jpeg" alt="Arduino_Code_3 X4" width="600" align="center" caption="Arduino_Code_3"/>
 
 6) Kinematic_node
 
@@ -254,10 +264,6 @@ angular:
   x: 0.0
   y: 0.0" 
   z: 2.0"
-
-Check Point 2:
-<img src="Images/Troubleshooting.jpeg" alt="Troubleshooting X4" width="200" align="right" caption="Troubleshooting"/>
----> Pay attention to not let the Arduino, Motor Shield or Rasspbery Pi touch a metal chassis.
 
 Check Point 3:
 
