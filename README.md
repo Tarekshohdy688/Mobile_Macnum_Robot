@@ -40,3 +40,15 @@ Follow these steps to assemble YDPIbot:
 4. Connect the DC motors to the motor driver shield and attach the wheels to the motor shafts.
 5. Install the battery on the robot and connect it to the motor driver shield.
 6. Install the power bank on the robot and connect it to the Raspberry Pi connected to the Arduino Mega.
+
+---------------------------
+# Installation
+To use this mobile platform, you will need to install the following dependencies:
+
+- [Python 3](https://www.python.org/downloads/)
+- [Ubiquity Robotics image - Ubuntu 20.04](https://learn.ubiquityrobotics.com/noetic_pi_image_downloads) - for rasberry pi
+- [ROS Noetic](http://wiki.ros.org/noetic/Installation) - the ubiquity robotics image have ROS noetic already
+- [ROS Foxy](https://docs.ros.org/en/foxy/Installation.html) - On your Remote Device (Laptop for example).
+- [MPU6050](https://github.com/PigeonSensei/pigeon_imu_driver/tree/master/mpu6050)
+- [Joystick](https://www.youtube.com/watch?v=F5XlNiCKbrY) - use this youtube tutorial for controlling the robot with joystick
+- Rosserial
