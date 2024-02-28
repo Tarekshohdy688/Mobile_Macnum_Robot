@@ -147,29 +147,46 @@ Then try with:
 
 -testing code ros2: ros2 run demo_nodes_cpp talker
 
-3) SSH into Pi:
+2) SSH into Pi:
 -Username: *****
+
 -Password: *****
+
 -Connect both laptop and pi on the same network
+
 - On pi:
--hostname -I 
+-hostname -I
+
 -sudo raspi-config >> 3 Interface Options >> P2 SSH >> yes >> Ok
+
 - On laptop:
 -ssh ubuntu@192.168.43.237
+
 -password: *****
 
 3) joystick control:
 Follow the youtube tutorial mentioned earlier in the Installation section.
+
 -sudo apt install joystick*
+
 -evtest
+
 -sudo apt install jstest-gtk
+
 -jstest-gtk
+
 -ros2 run joy joy_enumerate_devices 
+
 -ros2 run joy joy_node 
+
 -ros2 topic echo /joy
+
 -ros2 param list
+
 -ros2 launch articubot_one joystick.launch.py
+
 -ros2 topic echo /joy
+
 -ros2 topic echo /cmd_vel
 
 Check Point 1: 
@@ -178,10 +195,12 @@ Check Point 1:
 4)whole system so far:
 -bashrc pi:
 - export ROS_MASTER_URI=http://192.168.43.177:11311/
+
 - export ROS_IP=192.168.43.237
 
 -bashrc lap:
 - export ROS_MASTER_URI=http://192.168.43.177:11311/
+
 - export ROS_IP=192.168.43.177
 
 -Noetic terminal:
@@ -193,7 +212,9 @@ Check Point 1:
 
 -foxy terminal:
 - ros2 launch articubot_one joystick.launch.py
+
 or 
+
 - ros2 topic pub /diff_cont/cmd_vel_unstamped geometry_msgs/msg/Twist "linear:
   x: 0.0
   y: 0.0
@@ -221,6 +242,7 @@ angular:
 
 7) IMU:
 -ros2 run basic_pkg quat_to_eul
+
 -ros2 topic echo /euler_angles
 
 -ros2 topic pub /imu_data sensor_msgs/msg/Imu "header:
@@ -250,12 +272,16 @@ linear_acceleration_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
 
 8) PID Control:
 -ros2 run basic_pkg pid_params
+
 -ros2 param list
+
 -ros2 param set pid_params kp 0.9
+
 -ros2 run basic_pkg pid_params --ros-args --params-file /home/youmna/colcon_ws/src/basic_pkg/config/pid_params.yaml
 
-9) Speed Conversion:
+10) Speed Conversion:
 -ros2 run basic_pkg mecanum_bot
+
 -ros2 topic pub /diff_cont/cmd_vel_unstamped --rate 1 geometry_msgs/msg/Twist "linear:
   x: 0.0
   y: 0.0
