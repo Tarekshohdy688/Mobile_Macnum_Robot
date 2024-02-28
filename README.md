@@ -125,6 +125,7 @@ To install the Mecanum Mobile Robot package, follow these steps:
 ## Work Process
 
 1) ROS1-2 Bridge:
+
 -cancel the default sourcing from bashrc
 
 -sudo apt-get install ros-foxy-ros1*
@@ -148,6 +149,7 @@ Then try with:
 -testing code ros2: ros2 run demo_nodes_cpp talker
 
 2) SSH into Pi:
+
 -Username: *****
 
 -Password: *****
@@ -155,16 +157,19 @@ Then try with:
 -Connect both laptop and pi on the same network
 
 - On pi:
+
 -hostname -I
 
 -sudo raspi-config >> 3 Interface Options >> P2 SSH >> yes >> Ok
 
 - On laptop:
+
 -ssh ubuntu@192.168.43.237
 
 -password: *****
 
 3) joystick control:
+
 Follow the youtube tutorial mentioned earlier in the Installation section.
 
 -sudo apt install joystick*
@@ -192,45 +197,61 @@ Follow the youtube tutorial mentioned earlier in the Installation section.
 Check Point 1: 
 
 
-4)whole system so far:
+4) whole system so far:
+
 -bashrc pi:
+
 - export ROS_MASTER_URI=http://192.168.43.177:11311/
 
 - export ROS_IP=192.168.43.237
 
 -bashrc lap:
+
 - export ROS_MASTER_URI=http://192.168.43.177:11311/
 
 - export ROS_IP=192.168.43.177
 
 -Noetic terminal:
+
 - roscore
 
 
 -foxy terminal:
+
 - ros2 run ros1_bridge dynamic_bridge
 
 -foxy terminal:
+
 - ros2 launch articubot_one joystick.launch.py
 
 or 
 
 - ros2 topic pub /diff_cont/cmd_vel_unstamped geometry_msgs/msg/Twist "linear:
+  
   x: 0.0
+  
   y: 0.0
+  
   z: 0.0
+  
 angular:
+
   x: 0.0
+  
   y: 0.0
+  
   z: 0.0" 
 
 -noetic terminal:
+
 - ros2 run my_first_package mecanum
 
 -noetic terminal:
+
 - rostopic echo /wheel_vel
 
 -ssh terminal:
+
 - rosrun rosserial_python serial_node.py /dev/ttyACM0 57600
 
 5) Arduino Code cpp:
@@ -241,36 +262,60 @@ angular:
 6) Kinematic_node
 
 7) IMU:
+   
 -ros2 run basic_pkg quat_to_eul
 
 -ros2 topic echo /euler_angles
 
 -ros2 topic pub /imu_data sensor_msgs/msg/Imu "header:
+
   stamp:
+  
     sec: 0
+    
     nanosec: 0
+
   frame_id: 'base_link'
+  
 orientation:
+
   x: 1.0
+  
   y: 0.0
+  
   z: 2.0
+  
   w: 1.0
+  
 orientation_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
 angular_velocity:
+
   x: 0.0
+  
   y: 0.0
+  
   z: 0.0
+  
 angular_velocity_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
 linear_acceleration:
+
   x: 0.0
+  
   y: 0.0
+  
   z: 0.0
+
 linear_acceleration_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
 
+
 -On raspberry pi:
+
 - roslaunch mpu6050 mpu6059.launch
 
 8) PID Control:
+
 -ros2 run basic_pkg pid_params
 
 -ros2 param list
@@ -280,25 +325,35 @@ linear_acceleration_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
 -ros2 run basic_pkg pid_params --ros-args --params-file /home/youmna/colcon_ws/src/basic_pkg/config/pid_params.yaml
 
 10) Speed Conversion:
+
 -ros2 run basic_pkg mecanum_bot
 
 -ros2 topic pub /diff_cont/cmd_vel_unstamped --rate 1 geometry_msgs/msg/Twist "linear:
-  x: 0.0
-  y: 0.0
-  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0" 
-  z: 2.0"
 
+  x: 0.0
+  
+  y: 0.0
+  
+  z: 0.0
+  
+angular:
+
+  x: 0.0
+  
+  y: 0.0" 
+  
+  z: 2.0"
+  
 Check Point 3:
 
 10) Gazebo:
+    
 -Include the IMU Plugin by running the following command:
 
 <img src="Images/Gazebo_Visual.jpeg" alt="Gazebo_Visual X4" width="500" align="center" caption="Gazebo_Visual"/>
 
 11) RVIZ:
+    
 <img src="Images/RVIZ_Visual.jpeg" alt="RVIZ_Visual X4" width="500" align="center" caption="RVIZ_Visual"/>
 
 
