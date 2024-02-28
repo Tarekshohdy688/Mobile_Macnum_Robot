@@ -256,7 +256,7 @@ angular:
   z: 2.0"
 
 Check Point 2:
-<img src="Images/Troubleshooting.jpeg" alt="Troubleshooting X4" width="500" align="center" caption="Troubleshooting"/>
+<img src="Images/Troubleshooting.jpeg" alt="Troubleshooting X4" width="500" align="right" caption="Troubleshooting"/>
 ---> Pay attention to not let the Arduino, Motor Shield or Rasspbery Pi touch a metal chassis.
 
 Check Point 3:
