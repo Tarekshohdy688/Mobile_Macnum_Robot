@@ -43,6 +43,7 @@ Follow these steps to assemble YDPIbot:
 
 ---------------------------
 # Installation
+
 To use this mobile platform, you will need to install the following dependencies:
 
 - [Python 3](https://www.python.org/downloads/)
@@ -52,3 +53,69 @@ To use this mobile platform, you will need to install the following dependencies
 - [MPU6050](https://github.com/PigeonSensei/pigeon_imu_driver/tree/master/mpu6050)
 - [Joystick](https://www.youtube.com/watch?v=F5XlNiCKbrY) - use this youtube tutorial for controlling the robot with joystick
 - Rosserial
+
+---------------------------
+### Installing Ubuntu20.04 on Raspberry PI
+
+We recommend installing Ubuntu 20.04 and ROS noetic on the Raspberry Pi using the Ubiquity Robotics image. Follow these steps to install Ubuntu 20.04 using the Ubiquity Robotics image:
+
+1. Download the Ubiquity Robotics image for Raspberry Pi from the [Ubiquity Robotics](https://learn.ubiquityrobotics.comnoetic_pi_image_downloads)
+
+2. Flash the image to an SD card using a tool like Raspberry Pi Imager.
+
+3. Insert the SD card into the Raspberry Pi and power it on.
+
+4. Follow the on-screen instructions to complete the Ubuntu 20.04 installation process.
+
+---------------------------
+### Installing MPU6050 pkg
+
+To install the MPU6050 pkg, follow these steps:
+
+1. Open a terminal on your Raspberry Pi.
+
+2. Clone the MPU6050 repository using the following command:
+
+    `https://github.com/PigeonSensei/pigeon_imu_driver/tree/master/mpu6050`
+
+3. Install wiringPi library from [here](http://wiringpi.com/download-and-install/)
+
+4. Run some demo with the IMU to check if it's working.
+
+--------------------------
+### Installing Mecanum Mobilie Robot pkg
+
+To install the Mecanum Mobile Robot package, follow these steps:
+
+1. Open a terminal on your PC.
+
+2. Navigate to your `catkin_ws/src` directory
+
+3. Clone the Mecanum Robot ROS1 Package using the following command:
+
+    `git clone https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/tree/main/ROS1%20Package.git`
+
+4. Navigate back to the main catkin_ws to build the pkg using the command:
+
+    `catkin_make`
+
+5. Navigate to your `colcon_ws/src` directory
+
+6. Clone the Mecanum Robot ROS2 Package using the following command:
+
+    `git clone https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/tree/main/ROS2%20Package.git`
+
+7. Navigate back to the main catkin_ws to build the pkg using the command:
+
+    `colcon build`
+
+-----------------------------
+### Uploading Arduino Code
+
+1. Open Arduino IDE and connect the arduino to your PC
+
+2. Choose from tools/boards Arduino Mega 2560 and choose the port (Usually **/dev/ttyACM0** if you are running from Ubuntu)
+
+3. Open the code in `~/catkin_ws/src/ydpibot/ydpibot_bringup/YDPIbot/YDPIbot.ino`
+
+4. Upload the code and connect the Arduino to the raspberry pi.
