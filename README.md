@@ -83,7 +83,7 @@ To install the MPU6050 pkg, follow these steps:
 4. Run some demo with the IMU to check if it's working.
 
 --------------------------
-### Installing Mecanum Mobilie Robot pkg
+### Installing Mecanum Mobile Robot pkg
 
 To install the Mecanum Mobile Robot package, follow these steps:
 
@@ -116,6 +116,6 @@ To install the Mecanum Mobile Robot package, follow these steps:
 
 2. Choose from tools/boards Arduino Mega 2560 and choose the port (Usually **/dev/ttyACM0** if you are running from Ubuntu)
 
-3. Open the code in `~/catkin_ws/src/ydpibot/ydpibot_bringup/YDPIbot/YDPIbot.ino`
+3. Open the code in `~/catkin_ws/src/ROS1Package/Motors_code/Motors_code.ino`
 
 4. Upload the code and connect the Arduino to the raspberry pi.
