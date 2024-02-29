@@ -190,8 +190,8 @@ ros2 topic echo /cmd_vel
 ```
 Check Point 1: 
 
-https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/videos/125088294/cf4d2c6d-a3fc-4c5d-9ff0-a8749508a93c
 
+https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/assets/125088294/12701bde-a29c-4d7e-830c-a08bf162dffc
 
 
 4) whole system so far:
@@ -347,13 +347,20 @@ angular:
   
   z: 2.0"
 ```  
-Check Point 3:
 
 10) Gazebo:
     
 -Include the IMU Plugin by running the following command:
 
 <img src="Images/Gazebo_Visual.jpeg" alt="Gazebo_Visual X4" width="500" align="center" caption="Gazebo_Visual"/>
+
+
+Check Point 2:
+
+
+https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/assets/125088294/8eb88805-7711-43fb-9b92-c9fe1abf2cfc
+
+
 
 11) RVIZ:
     
