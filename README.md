@@ -180,28 +180,6 @@ password: *****
 
 Follow the youtube tutorial mentioned earlier in the Installation section.
 ```
-sudo apt install joystick*
-
-evtest
-```
-```
-sudo apt install jstest-gtk
-
-jstest-gtk
-```
-```
-ros2 run joy joy_enumerate_devices 
-```
-```
-ros2 run joy joy_node 
-```
-```
-ros2 topic echo /joy
-```
-```
-ros2 param list
-```
-```
 ros2 launch articubot_one joystick.launch.py
 ```
 ```
@@ -212,38 +190,38 @@ ros2 topic echo /cmd_vel
 ```
 Check Point 1: 
 
+https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/videos/125088294/cf4d2c6d-a3fc-4c5d-9ff0-a8749508a93c
+
+
 
 4) whole system so far:
 
 -bashrc pi:
-
-- export ROS_MASTER_URI=http://192.168.43.177:11311/
-
-- export ROS_IP=192.168.43.237
-
+```
+export ROS_MASTER_URI=http://192.168.43.177:11311/
+export ROS_IP=192.168.43.237
+```
 -bashrc lap:
-
-- export ROS_MASTER_URI=http://192.168.43.177:11311/
-
-- export ROS_IP=192.168.43.177
-
+```
+export ROS_MASTER_URI=http://192.168.43.177:11311/
+export ROS_IP=192.168.43.177
+```
 -Noetic terminal:
-
-- roscore
-
-
+```
+roscore
+```
 -foxy terminal:
-
-- ros2 run ros1_bridge dynamic_bridge
-
+```
+ros2 run ros1_bridge dynamic_bridge
+```
 -foxy terminal:
-
-- ros2 launch articubot_one joystick.launch.py
-
+```
+ros2 launch articubot_one joystick.launch.py
+```
 or 
+```
+ros2 topic pub /diff_cont/cmd_vel_unstamped geometry_msgs/msg/Twist "linear:
 
-- ros2 topic pub /diff_cont/cmd_vel_unstamped geometry_msgs/msg/Twist "linear:
-  
   x: 0.0
   
   y: 0.0
@@ -257,18 +235,19 @@ angular:
   y: 0.0
   
   z: 0.0" 
-
+```
 -noetic terminal:
-
-- ros2 run my_first_package mecanum
-
+```
+ros2 run my_first_package mecanum
+```
 -noetic terminal:
-
-- rostopic echo /wheel_vel
-
+```
+rostopic echo /wheel_vel
+```
 -ssh terminal:
-
-- rosrun rosserial_python serial_node.py /dev/ttyACM0 57600
+```
+rosrun rosserial_python serial_node.py /dev/ttyACM0 57600
+```
 
 5) Arduino Code cpp:
 <img src="Images/Arduino_Code_1.jpeg" alt="Arduino_Code_1 X4" width="600" align="center" caption="Arduino_Code_1"/>
@@ -278,11 +257,12 @@ angular:
 6) Kinematic_node
 
 7) IMU:
-   
--ros2 run basic_pkg quat_to_eul
-
--ros2 topic echo /euler_angles
-
+``` 
+ros2 run basic_pkg quat_to_eul
+```
+```
+ros2 topic echo /euler_angles
+```
 ```
 ros2 topic pub /imu_data sensor_msgs/msg/Imu "header:
 
@@ -328,24 +308,30 @@ linear_acceleration_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
 ```
 
 -On raspberry pi:
-
-- roslaunch mpu6050 mpu6059.launch
+```
+roslaunch mpu6050 mpu6059.launch
+```
 
 8) PID Control:
-
--ros2 run basic_pkg pid_params
-
--ros2 param list
-
--ros2 param set pid_params kp 0.9
-
--ros2 run basic_pkg pid_params --ros-args --params-file /home/youmna/colcon_ws/src/basic_pkg/config/pid_params.yaml
+```
+ros2 run basic_pkg pid_params
+```
+```
+ros2 param list
+```
+```
+ros2 param set pid_params kp 0.9
+```
+```
+ros2 run basic_pkg pid_params --ros-args --params-file /home/youmna/colcon_ws/src/basic_pkg/config/pid_params.yaml
+```
 
 10) Speed Conversion:
-
--ros2 run basic_pkg mecanum_bot
-
--ros2 topic pub /diff_cont/cmd_vel_unstamped --rate 1 geometry_msgs/msg/Twist "linear:
+```
+ros2 run basic_pkg mecanum_bot
+```
+```
+ros2 topic pub /diff_cont/cmd_vel_unstamped --rate 1 geometry_msgs/msg/Twist "linear:
 
   x: 0.0
   
@@ -360,7 +346,7 @@ angular:
   y: 0.0" 
   
   z: 2.0"
-  
+```  
 Check Point 3:
 
 10) Gazebo:
