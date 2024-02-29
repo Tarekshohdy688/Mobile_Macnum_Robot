@@ -127,26 +127,36 @@ To install the Mecanum Mobile Robot package, follow these steps:
 1) ROS1-2 Bridge:
 
 -cancel the default sourcing from bashrc
-
--sudo apt-get install ros-foxy-ros1*
-
--source /opt/ros/noetic/setup.bash 
-
--source /opt/ros/foxy/local_setup.bash 
-
--source /home/tarekshohdy/catkin_workspace/devel/setup.bash   --> change my name to yours
-
--source /home/tarekshohdy/colcon_ws/install/local_setup.bash  --> change my name to yours
-
--export ROS_MASTER_URI=http://tarekshohdy-IdeaPad-Gaming-3-15ACH6:11311/  --> change my name to yours
-
--ros2 run ros1_bridge dynamic_bridge
-
+```
+sudo apt-get install ros-foxy-ros1*
+```
+```
+source /opt/ros/noetic/setup.bash 
+```
+```
+source /opt/ros/foxy/local_setup.bash 
+```
+```
+source /home/tarekshohdy/catkin_workspace/devel/setup.bash
+```
+```
+source /home/tarekshohdy/colcon_ws/install/local_setup.bash
+```
+```
+export ROS_MASTER_URI=http://tarekshohdy-IdeaPad-Gaming-3-15ACH6:11311/
+```
+```
+ros2 run ros1_bridge dynamic_bridge
+```
 Then try with:
-
--testing code ros1: rosrun rospy_tutorials listener
-
--testing code ros2: ros2 run demo_nodes_cpp talker
+Testing code ros1: 
+```
+rosrun rospy_tutorials listener
+```
+Testing code ros2:
+```
+ros2 run demo_nodes_cpp talker
+```
 
 2) SSH into Pi:
 
@@ -267,16 +277,17 @@ angular:
 
 -ros2 topic echo /euler_angles
 
--ros2 topic pub /imu_data sensor_msgs/msg/Imu "header:
+```
+ros2 topic pub /imu_data sensor_msgs/msg/Imu "header:
 
   stamp:
-  
+
     sec: 0
-    
+
     nanosec: 0
 
   frame_id: 'base_link'
-  
+
 orientation:
 
   x: 1.0
@@ -308,7 +319,7 @@ linear_acceleration:
   z: 0.0
 
 linear_acceleration_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
-
+```
 
 -On raspberry pi:
 
