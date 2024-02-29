@@ -366,5 +366,9 @@ https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/assets/125088294/8eb88805-
     
 <img src="Images/RVIZ_Visual.jpeg" alt="RVIZ_Visual X4" width="500" align="center" caption="RVIZ_Visual"/>
 
+----------------------------
+# Final Commands to Run
+```
+ros2 run ros1_bridge dynamic_bridge
+```
 
-Finally just Run the following commands:
