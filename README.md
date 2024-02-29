@@ -129,23 +129,17 @@ To install the Mecanum Mobile Robot package, follow these steps:
 -cancel the default sourcing from bashrc
 ```
 sudo apt-get install ros-foxy-ros1*
-```
-```
-source /opt/ros/noetic/setup.bash 
-```
-```
+
+source /opt/ros/noetic/setup.bash
+
 source /opt/ros/foxy/local_setup.bash 
-```
-```
+
 source /home/tarekshohdy/catkin_workspace/devel/setup.bash
-```
-```
+
 source /home/tarekshohdy/colcon_ws/install/local_setup.bash
-```
-```
+
 export ROS_MASTER_URI=http://tarekshohdy-IdeaPad-Gaming-3-15ACH6:11311/
-```
-```
+
 ros2 run ros1_bridge dynamic_bridge
 ```
 Then try with:
@@ -160,50 +154,62 @@ ros2 run demo_nodes_cpp talker
 
 2) SSH into Pi:
 
--Username: *****
+Username: *****
 
--Password: *****
+Password: *****
 
--Connect both laptop and pi on the same network
+Connect both laptop and pi on the same network
 
 - On pi:
-
--hostname -I
-
--sudo raspi-config >> 3 Interface Options >> P2 SSH >> yes >> Ok
+```
+hostname -I
+```
+```
+sudo raspi-config
+```
+>> 3 Interface Options >> P2 SSH >> yes >> Ok
 
 - On laptop:
+```
+ssh ubuntu@192.168.43.237
+```
+password: *****
 
--ssh ubuntu@192.168.43.237
-
--password: *****
 
 3) joystick control:
 
 Follow the youtube tutorial mentioned earlier in the Installation section.
+```
+sudo apt install joystick*
 
--sudo apt install joystick*
+evtest
+```
+```
+sudo apt install jstest-gtk
 
--evtest
-
--sudo apt install jstest-gtk
-
--jstest-gtk
-
--ros2 run joy joy_enumerate_devices 
-
--ros2 run joy joy_node 
-
--ros2 topic echo /joy
-
--ros2 param list
-
--ros2 launch articubot_one joystick.launch.py
-
--ros2 topic echo /joy
-
--ros2 topic echo /cmd_vel
-
+jstest-gtk
+```
+```
+ros2 run joy joy_enumerate_devices 
+```
+```
+ros2 run joy joy_node 
+```
+```
+ros2 topic echo /joy
+```
+```
+ros2 param list
+```
+```
+ros2 launch articubot_one joystick.launch.py
+```
+```
+ros2 topic echo /joy
+```
+```
+ros2 topic echo /cmd_vel
+```
 Check Point 1: 
 
 
