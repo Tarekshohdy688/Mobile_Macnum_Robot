@@ -371,4 +371,19 @@ https://github.com/Tarekshohdy688/Mobile_Macnum_Robot/assets/125088294/8eb88805-
 ```
 ros2 run ros1_bridge dynamic_bridge
 ```
+## Credits
 
+This project was created by Abdallah Amr, Mostafa Osama, Tarek Shohdy, and Yomna Omar from Egypt-Japan University of Science and Technology. We would like to acknowledge the following libraries and tools that were used in the development of this project:
+
+- [Adafruit Motor Shield library](https://learn.adafruit.com/adafruit-motor-shield/library-install)
+- [Ubiquity Robotics Raspberry Pi Image](https://learn.ubiquityrobotics.comnoetic_pi_image_downloads)
+- [MPU6050](https://github.com/PigeonSensei/pigeon_imu_driver/tree/master/mpu6050)
+
+We would also like to thank the following people for their contributions to this project:
+
+- Abdallah Amr (abdallah.amr@ejust.edu.eg)
+- Mostafa Osama (mostafa.eshra@ejust.edu.eg)
+- Tarek Shohdy (tarek.shohdy@ejust.edu.eg)
+- Yomna Omar (yomna.mokhtar@ejust.edu.eg)
+
+If you have any questions or feedback about YDPIbot, please contact us at abdallah.amr@ejust.edu.eg. We would love to hear from you!
